@@ -1,0 +1,10 @@
+.sort > p {
+  color: white;
+  font-weight: 700;
+}
+
+.sort > select {
+  background: none;
+  color: white;
+  font-weight: 600;
+}

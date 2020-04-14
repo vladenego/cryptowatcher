@@ -1,12 +1,12 @@
 import React from 'react';
 import './Item.css';
-import { render } from 'react-dom';
 
 export default function Item(props) {
 
   return (
     <div className="item hvr-grow-shadow">
       <div className="logo">
+      {console.log(props.data)}
         <img src={"/img/" + props.data.name + ".png"} alt=""/>
         {/* <img src="/img/EOS.png" alt=""/> */}
       </div>
@@ -16,7 +16,9 @@ export default function Item(props) {
       <div className="currency">
       {props.data.price_usd.toFixed(2)} $
       </div>
+
     </div>
+    
     
   )
   

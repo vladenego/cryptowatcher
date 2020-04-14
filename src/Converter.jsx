@@ -47,7 +47,7 @@ export default class Converter extends React.Component {
           
           {this.props.currency.map((element, index) => {
             if(element.price_usd != undefined && element.name == "Bitcoin" || element.name == "Ethereum" || element.name == "Ripple" ||element.name == "Bitcoin Cash" ||element.name == "Tether" ||element.name == "Litecoin" ||element.name == "EOS" ||element.name == "Binance Coin"  || element.name == "Stellar"){
-            return <option className="selectOption" key={index} value={element.price_usd}>{element.name}</option>}
+            return <option className="selectOption" key={index} value={element.price_usd}> {element.name} </option>}
           })}
         </select>
         
