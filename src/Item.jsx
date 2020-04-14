@@ -6,7 +6,7 @@ export default function Item(props) {
   return (
     <div className="item hvr-grow-shadow">
       <div className="logo">
-      {console.log(props.data)}
+     
         <img src={"/img/" + props.data.name + ".png"} alt=""/>
         {/* <img src="/img/EOS.png" alt=""/> */}
       </div>

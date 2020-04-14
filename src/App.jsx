@@ -15,6 +15,18 @@ import {
   Link
 } from "react-router-dom";
 
+const validCrypto = new Set([
+  "Bitcoin",
+  "Ethereum",
+  "Ripple",
+  "Bitcoin Cash",
+  "Tether",
+  "Litecoin",
+  "EOS",
+  "Binance Coin",
+  "Stellar"
+])
+
 export default class App extends React.Component {
   constructor() {
     super();
@@ -24,25 +36,11 @@ export default class App extends React.Component {
     };
   }
 
-  componentDidMount(){
-    fetch('https://rest.coinapi.io/v1/assets?apikey=4EF2A239-DE2E-479C-B802-5E1B306ACE7E')
-    .then((response) => response.json())
-    .then((data) => {
-
-      
   
-    
-      this.setState({
-        news: data
-      })
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
-  }
+
+  
  
 render(){
-  // console.log(this.state.news);
   
   return ( 
     <div className = "App" >
@@ -57,7 +55,7 @@ render(){
       </Route>
       <Route  exact path="/">
         {/* <Sort /> */}
-        <List news={this.state.news} />       
+        <List />       
       </Route>
           
         </Switch>
