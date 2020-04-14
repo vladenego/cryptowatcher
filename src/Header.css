@@ -1,0 +1,89 @@
+header {
+  width: 100%;
+  height: 70px;
+  background: #3C444C;
+  box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.header {
+  display: flex;
+  /* justify-content: space-between; */
+  
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: Montserrat;
+  font-weight: 800;
+  margin-right: auto;
+}
+
+.header__logo img {
+  margin-right: 10px;
+}
+
+.container {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.header__nav {
+  color: white;
+  font-weight: 500;
+  margin-right: 30px;
+}
+.header__nav ul  {
+  list-style: none;
+  display: flex;
+}
+
+.header__nav li {
+  margin-right: 30px;
+  padding: 5px 0px;
+  cursor: pointer;
+  color: white;
+}
+.header__nav li:last-child {
+  margin-right: 0px;
+}
+.header__nav  a {
+  color: white;
+  text-decoration: none;
+}
+
+.header__btn {
+  display: flex;
+  align-items: center;
+
+}
+
+.header__btn > .login {
+  color: white;
+  font-weight: 700;
+  width: 62px;
+  height: 30px;
+  background: none;
+  border: 1px solid #FFFFFF;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.header__btn > .register {
+  background: linear-gradient(90deg, #F27A54 0%, #A154F2 186.42%);
+  border-radius: 20px;
+  border: none;
+
+}
+.register {
+  font-family: Montserrat;
+  width: 91px;
+  height: 30px;
+  color: white;
+  font-weight: 700;
+}

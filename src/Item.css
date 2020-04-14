@@ -1,0 +1,33 @@
+.item {
+  display: flex;
+  
+  max-width: 400px;
+  height: 40px;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px 20px;
+  align-items: center;
+  background: #3C444D;
+  box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  margin: 20px auto;
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
+.logo {
+  margin-right: 120px;
+}
+
+.logo img {
+  width: 30px;
+}
+
+.name {
+  color: #FFFFFF;
+  margin-right: auto;
+}
+
+.currency {
+  color:#F27A54;;
+}

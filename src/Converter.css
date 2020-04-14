@@ -1,0 +1,69 @@
+h1{
+  color: white;
+}
+
+.converter {
+  padding: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  justify-content: center;
+  margin: 0 auto;
+  overflow: scroll;
+  align-items: center;
+}
+
+input {
+  outline: none;
+  background: none;
+  border: 1px solid #747D88;
+  border-radius: 3px;
+  padding: 0px 10px;
+  width: 275px;
+  height: 40px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+input::placeholder {
+  color: white;
+}
+
+input:focus {
+  border: 1px solid #F27A54;;
+}
+
+select {
+  width: 300px;
+  padding: 10px 20px;
+  background: #ffffff;
+  border: 1px solid #747D88;
+  outline: none;
+  height: 42px;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+select:focus {
+  border: 1px solid #F27A54;;
+}
+
+.selectOption {
+  background: red;
+}
+
+.resultSum {
+  overflow: scroll;
+}
+h2 {
+  color: white;
+  font-size: 30px;
+  background: linear-gradient(90deg, #F27A54 0%, #A154F2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  
+}

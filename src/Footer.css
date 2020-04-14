@@ -1,0 +1,19 @@
+#owner {
+  color: white;
+  background: linear-gradient(90deg, #F27A54 0%, #A154F2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  animation-delay: 2s;
+  transform: 3s;
+}
+
+#owner:hover {
+  background: linear-gradient(90deg, #A154F2 0%, #F27A54  100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  animation-delay: 2s;
+}
