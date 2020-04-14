@@ -2,13 +2,28 @@ import React from 'react';
 import './Converter.css';
 import { render } from 'react-dom';
 
+const validCrypto = new Set([
+  "Bitcoin",
+  "Ethereum",
+  "Ripple",
+  "Bitcoin Cash",
+  "Tether",
+  "Litecoin",
+  "EOS",
+  "Binance Coin",
+  "Stellar"
+])
+
+
 export default class Converter extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
       result: null,
-      curs: null
+      curs: null,
+      dataForSelect: []
+
     };
     
   }
@@ -31,10 +46,26 @@ export default class Converter extends React.Component {
     
   }
 
+  componentDidMount(){
+   
+    
+    
+    fetch('https://rest.coinapi.io/v1/assets?apikey=4EF2A239-DE2E-479C-B802-5E1B306ACE7E')
+    .then((response) => response.json())
+    .then((data) => {
+    
+      this.setState({
+        ...this.state,
+        dataForSelect: data.filter((item) => validCrypto.has(item.name)),
+        
+      })
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    })
+  }
+
   
-  
-  
- 
   render(){
 
     return(
@@ -45,10 +76,9 @@ export default class Converter extends React.Component {
         
            <option value="Bitcoin" selected disabled hidden >Select Crypto</option>
           
-          {this.props.currency.map((element, index) => {
-            if(element.price_usd != undefined && element.name == "Bitcoin" || element.name == "Ethereum" || element.name == "Ripple" ||element.name == "Bitcoin Cash" ||element.name == "Tether" ||element.name == "Litecoin" ||element.name == "EOS" ||element.name == "Binance Coin"  || element.name == "Stellar"){
+          {this.state.dataForSelect.map((element, index) => {
             return <option className="selectOption" key={index} value={element.price_usd}> {element.name} </option>}
-          })}
+          )}
         </select>
         
         <div className="resultSum">

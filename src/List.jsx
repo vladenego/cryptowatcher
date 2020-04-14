@@ -24,11 +24,17 @@ export default class List extends React.Component {
     
     this.state = {
       sortedList: [],
-      news: []
+      loading: false
     }
   }
 
   componentDidMount(){
+    this.setState({
+      ...this.state,
+      loading: true,
+      
+    })
+    
     console.log("допа вася");
     
     fetch('https://rest.coinapi.io/v1/assets?apikey=4EF2A239-DE2E-479C-B802-5E1B306ACE7E')
@@ -36,12 +42,20 @@ export default class List extends React.Component {
     .then((data) => {
     
       this.setState({
+        ...this.state,
         sortedList: data.filter((item) => validCrypto.has(item.name)),
+        
       })
     })
     .catch((error) => {
       console.error('Error:', error);
-    });
+    }).finally(() => {
+      this.setState({
+        ...this.state,
+        loading: false, 
+      })
+      
+    })
   }
 
   
@@ -94,7 +108,7 @@ export default class List extends React.Component {
       <Sort  methodforSort={(e) => { this.handleSortList(e)}}  />
 
 
-      {this.state.sortedList.map((element,index) =>  <Item key={index} data={element} /> )}
+      {this.state.loading === false ? this.state.sortedList.map((element,index) =>  <Item key={index} data={element} /> ) : <p className="loading">Loading...</p> }
 
       </main>
     )
