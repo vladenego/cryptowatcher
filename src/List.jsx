@@ -4,8 +4,6 @@ import { render } from 'react-dom';
 import Item from "./Item.jsx"
 import Sort from './Sort';
 
-let readyArr = []
-let arrForSort = []
 const validCrypto = new Set([
   "Bitcoin",
   "Ethereum",
@@ -35,7 +33,6 @@ export default class List extends React.Component {
       
     })
     
-    console.log("допа вася");
     
     fetch('https://rest.coinapi.io/v1/assets?apikey=4EF2A239-DE2E-479C-B802-5E1B306ACE7E')
     .then((response) => response.json())

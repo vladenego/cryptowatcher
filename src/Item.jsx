@@ -1,10 +1,11 @@
 import React from 'react';
 import './Item.css';
+import  './Animation.css';
 
 export default function Item(props) {
 
   return (
-    <div className="item hvr-grow-shadow">
+    <div className="item hvr-grow-shadow bounceIn">
       <div className="logo">
      
         <img src={"/img/" + props.data.name + ".png"} alt=""/>

@@ -6,6 +6,8 @@ import './hover.css';
 import Header from "./Header.jsx"
 import Footer from "./Footer.jsx"
 import List from "./List.jsx"
+import Chart from "./Chart.jsx"
+
 
 import Converter from "./Converter.jsx"
 import {
@@ -14,6 +16,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Socials from './Socials';
 
 const validCrypto = new Set([
   "Bitcoin",
@@ -36,9 +39,6 @@ export default class App extends React.Component {
     };
   }
 
-  
-
-  
  
 render(){
   
@@ -48,11 +48,19 @@ render(){
     <Router>
     <Header />
      <Switch>
+
+     <Route  path="/contact">
+        <Socials />   
+      </Route>
+
       <Route  path="/сonverter">
         <Converter currency={this.state.news} />   
       </Route>
-        <Route path="/chart">
+        
+      <Route path="/chart">
+        <Chart />
       </Route>
+
       <Route  exact path="/">
         {/* <Sort /> */}
         <List />       
