@@ -1,83 +1,51 @@
+import React from 'react';
+import './Header.css';
+import { render } from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import About from "./Converter.jsx"
+import { slide as Menu } from 'react-burger-menu'
 
-{ readyArr  =  this.props.news.map((element) => {
 
-  let arrForSort = [];
 
-  if(element.price_usd != undefined && element.name == "Bitcoin" || element.name == "Ethereum" || element.name == "Ripple" ||element.name == "Bitcoin Cash" ||element.name == "Tether" ||element.name == "Litecoin" ||element.name == "EOS" ||element.name == "Binance Coin"  || element.name == "Stellar"){
 
-    arrForSort = arrForSort.push(element)
-    
+export default class Header extends React.Component {
+
+  // constructor(){
+
+  // }
+
+  showSettings (event) {
+    event.preventDefault();
   
+  }
 
-return arrForSort
+  render(){
 
+    return(
+      <div id="outer-container">
+        <header>
+          hi
+        </header>
+        <button>
+
+        </button>
+        <Menu>
+          <a id="home" className="menu-item" href="/">Home</a>
+          <a id="about" className="menu-item" href="/converter">Converter</a>
+          <a id="contact" className="menu-item" href="/contact">Contact</a>
+          <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
+        </Menu> 
+      </div> 
+
+    )
+  }
+  
 }
-  console.log(arrForSort)
-  
-  if(this.state.sortType == null) {
-    let result = []
-
-    {/* result = arrForSort.map((element, index) => {
-      return <Item data={element} key={index}  />
-    }) */}
-
-    return result
-  }
-
-
-  
-  else if (this.state.sortType == "name") {
-     
-    let result = arrForSort.sort((a,b) => {
-    return b.price_usd - a.price_usd 
-    })
-    
-    result = result.map((item,index) => {
-      return (
-        <Item key={index} data={item}  />
-      ) 
-    })
-    console.log(result)
-    return result
-   }
-
-   else if (this.state.sortType == "price") {
-     
-     let result = arrForSort.sort((a,b) => {
-     return a.price_usd - b.price_usd 
-     })
-     console.log(result)
-     result = result.map((item,index) => {
-       return (
-         <Item key={index} data={item}  />
-       ) 
-     })
-     console.log(result)
-     return result 
-
-   }
-   
-
-   {/* else if (this.state.sortType == "price") {
-     
-     let result = arrForSort.sort((a,b) => {
-     return a.price_usd - b.price_usd 
-     })
-     console.log(result)
-     result = result.map((item,index) => {
-       return (
-         <Item key={index} data={item}  />
-       ) 
-     })
-     console.log(result)
-     return result  
-    } */}
-
-
-
- 
- )} 
- 
 
 
 
@@ -85,10 +53,32 @@ return arrForSort
 
 
 
-{/* {this.props.news.map((element) => {
-  if(element.price_usd != undefined && element.name == "Bitcoin" || element.name == "Ethereum" || element.name == "Ripple" ||element.name == "Bitcoin Cash" ||element.name == "Tether" ||element.name == "Litecoin" ||element.name == "EOS" ||element.name == "Binance Coin"  || element.name == "Stellar"){
-    arrForSort.push(element)
-    {console.log(this.state.sortType)}
-  return <Item data={element} arrayForSort={arrForSort} />
-  }
- })}  */}
+
+
+<header>
+      <div className="container">
+      <div className="header">
+
+      
+        <div className="header__logo">
+          <img className="hvr-rotate" src="img/logo.png" alt=""/>
+          CRYPTOWATCHER
+        </div>
+        <div className="header__nav ">
+          <ul>
+            <li className="hvr-underline-from-left"><Link to="/">Home</Link></li>
+            <li className="hvr-underline-from-left"><Link to="/сonverter">Converter</Link></li>
+            <li className="hvr-underline-from-left"><Link to="/chart">Chart</Link></li>
+            <li className="hvr-underline-from-left"><Link to="/contact">Contact</Link></li>
+          </ul>
+        </div>
+        {/* <div className="header__btn">
+          <button className="login hvr-grow-shadow">LOGIN</button>
+          <button className="register hvr-grow-shadow">Register</button>
+        </div> */}
+      </div>
+      </div>
+
+      
+
+</header>

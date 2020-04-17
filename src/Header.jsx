@@ -8,38 +8,58 @@ import {
   Link
 } from "react-router-dom";
 import About from "./Converter.jsx"
+import { slide as Menu } from 'react-burger-menu'
 
 
-export default function Header() {
-  return(
-   
-    <header>
-      <div className="container">
-      <div className="header">
 
-      
-        <div className="header__logo">
-          <img className="hvr-rotate" src="img/logo.png" alt=""/>
-          CRYPTOWATCHER
-        </div>
-        <div className="header__nav ">
-          <ul>
-            <li className="hvr-underline-from-left"><Link to="/">Home</Link></li>
-            <li className="hvr-underline-from-left"><Link to="/сonverter">Converter</Link></li>
-            <li className="hvr-underline-from-left"><Link to="/chart">Chart</Link></li>
-            <li className="hvr-underline-from-left"><Link to="/contact">Contact</Link></li>
-          </ul>
-        </div>
-        <div className="header__btn">
-          <button className="login hvr-grow-shadow">LOGIN</button>
-          <button className="register hvr-grow-shadow">Register</button>
-        </div>
-      </div>
-      </div>
 
-      
+export default class Header extends React.Component {
 
-    </header>
+
+  showSettings (event) {
+    event.preventDefault();
   
-  )
+  }
+
+  myFunction() {
+    let x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+
+  render(){
+
+    return(
+
+
+      <header >
+        <div className="header">
+        <Link className="header__title-link" to="/">
+          <img className="hvr-rotate" src="img/logo.png" alt=""/>
+          <span className="header__title">CRYPTOWATCHER</span>
+        </Link>
+        </div>
+
+        <div class="topnav" id="myTopnav">
+          <a href="/"  ><Link className="active2" to="/">Home</Link></a>
+          <a href=""><Link to="/сonverter">Converter</Link></a>
+          <a href=""><Link to="/chart">Chart</Link></a>
+          <a href=""><Link to="/contact">Contact</Link></a>
+          <a href="javascript:void(0);" class="icon" onClick={this.myFunction}>
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+
+    
+      </header>   
+        
+        
+
+    )
+  }
+  
 }
+

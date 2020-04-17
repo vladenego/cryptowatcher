@@ -1,6 +1,6 @@
 import React from 'react';
 import './Chart.css';
-import { Bar,Line,Pie } from 'react-chartjs-2';
+import { HorizontalBar,Line,Pie } from 'react-chartjs-2';
 
 
 const validCrypto = new Set([
@@ -116,7 +116,7 @@ export default class Chart extends React.Component {
     return(
       <div className="chart">
      
-        <Bar
+        <HorizontalBar
           data={this.state.dataForChart}
           width={100}
           height={600}

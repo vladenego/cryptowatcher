@@ -13,6 +13,7 @@
   margin: 20px auto;
   font-family: Montserrat;
   font-weight: 700;
+  
 }
 
 .logo {
@@ -30,4 +31,20 @@
 
 .currency {
   color:#F27A54;;
+}
+
+@media screen and (max-width: 440px){
+  .item {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 15px;
+    font-size: 14px;
+  }
+  .logo {
+    margin-right: 0px;
+  }
+  .name {
+    color: #FFFFFF;
+    margin-right: 0px;
+  }
 }

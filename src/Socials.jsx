@@ -6,7 +6,7 @@ export default function Socials(){
   return(
     <div className="socials">
     <div className="container">
-      <h2 className="socials__title bounceIn">My Socials</h2>
+      <h1 className="socials__title bounceIn">My Socials</h1>
       <div className="socials__list ">
 
         <div className="socials__list-item">

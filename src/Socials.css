@@ -67,5 +67,13 @@
   border: 1px solid white;
 }
 
+@media screen and (max-width: 1000px){
+  .socials__list-item{
+    transform: none;
+    margin: 30px 30px;
+  }
+}
+
+
 
 
